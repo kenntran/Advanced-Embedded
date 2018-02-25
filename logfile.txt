@@ -1,0 +1,813 @@
+-- Logs begin at Sat 2018-02-24 14:47:10 EET, end at Sun 2018-02-25 11:40:45 EET. --
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTkzOTc1ODcsIm5iZiI6MTUxOTM5Mzk4NywianRpIjoiWDFOOTJJb3ZzR2YxdEZMSCJ9.F5lPVf9ZwKTlxMqYp6qUz7blETBZT6pfw2niONFUrA8
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MDA4OTMsIm5iZiI6MTUxOTM5NzI5MywianRpIjoiVWZad2FBSmE1Qk5YRXNnViJ9.OzLH759m78iaipH-9h3_L3YCs_eml4SGPQOPa9U4OVE
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MDQyMDMsIm5iZiI6MTUxOTQwMDYwMywianRpIjoiQVRJOGZmckdsOWRVN2ZrSyJ9.YIRRiGwZU5FqMJ8OPCAqcKG_NCobAZzwNe_LoacCzE8
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MDc1MTAsIm5iZiI6MTUxOTQwMzkxMCwianRpIjoiT2Y3eFRUT05sMHdibUZXNyJ9.PMvhhw8GmvMfWUjvED55TvFJlZtYHAkp463NLuwlsAg
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MTA4MTksIm5iZiI6MTUxOTQwNzIxOSwianRpIjoic2hrR293OXk4YXNKNWx2aSJ9.7WqGvuZNvyPpwlzeo6WyUI2waip1dDtPKZcCKOs-k0s
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MTQxMjgsIm5iZiI6MTUxOTQxMDUyOCwianRpIjoiemFCRkRrTDJTR3hEMnRNTCJ9.1JUveVERYBmb3bc57h00eMRmtO8qW1il5LXNzVP9r3o
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MTc0MzQsIm5iZiI6MTUxOTQxMzgzNCwianRpIjoieExGbmZDVEZPSnZyWmVCdCJ9.jEyLUbzvYL4gpsvSd8KbND3jPeoVwt0eSVCurUwZ9bQ
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MjA3MzgsIm5iZiI6MTUxOTQxNzEzOCwianRpIjoiaUhRSnFDSTFJbXdQR3kwTiJ9.e8rp9hviZ3Hrfr3XKmRA0Ne4Crx6gFMr9crILosdebQ
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MjQwNDYsIm5iZiI6MTUxOTQyMDQ0NiwianRpIjoiTVRtSGtSeTBhdGNZWVA2MSJ9.Ysm63WCbv89n7nJoATIob0QwJI5_rWf76QP99_Wxano
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MjczNTMsIm5iZiI6MTUxOTQyMzc1MywianRpIjoiUHloY3RBalZ3OUI5UERTdiJ9.CuM3q-_I0wtT-j1mGhfE2OZFEio17NEv0CUPpIKHFig
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MzA2NjAsIm5iZiI6MTUxOTQyNzA2MCwianRpIjoibGg2VHhGN3dWUzhyekRheSJ9.U8oTTG8o7ZwtFG4DfX9veNBpsemfqDkz22OBKGJPGQ0
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MzM5NjgsIm5iZiI6MTUxOTQzMDM2OCwianRpIjoiSEczTktvOW1iYlg4b0F2ZiJ9.S7-rQsdfpOzZB3n5K63ROGRAl8xaD44-QVJCUvNX1eI
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0MzcyNzUsIm5iZiI6MTUxOTQzMzY3NSwianRpIjoid2NBOGVJRU5NVUV6RWFiaiJ9.PwLB34YBy2LWCq77RxiyV3kHe4TJaC5Pom3ObICPv3A
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NDA1ODYsIm5iZiI6MTUxOTQzNjk4NiwianRpIjoiNlJpTGFMQ1NvVHd2ZTgxdyJ9.JyWyI_5oyUhyyZgUHXPNnPIZSrYDdLdbH7c8l4Hro6M
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NDM4OTcsIm5iZiI6MTUxOTQ0MDI5NywianRpIjoiSUJPRFRSSGt4NFhGd1FFYiJ9.5AYcZnCbfAF5geYbrBXZpIR664OfsPNOTe8aVSnTeJ0
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NDcyMDYsIm5iZiI6MTUxOTQ0MzYwNiwianRpIjoielNPcFIzbjE4RGpSNDZOViJ9.BvXvpsjlDafbFIJ4kt4aVL2kxzKrKv6FCes2imtYpN8
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NTA1MTUsIm5iZiI6MTUxOTQ0NjkxNSwianRpIjoiSVN0THNDRkhsdHh0Q0M5ZCJ9.W_9NNQ2NzJaU1d3I5Lb4K4TADAdviCY3dQn8gu_jrko
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NTM4MjIsIm5iZiI6MTUxOTQ1MDIyMiwianRpIjoidE1ZeWtwMzd6VWZqSGFvSiJ9.G-WK7U1o5Yv1oV6luXqVgycX-m10HQfaDBW_BLL6qSk
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NTcxMjIsIm5iZiI6MTUxOTQ1MzUyMiwianRpIjoiaHdNQ2NpMVZDdlJpZFNJUSJ9.rMrsPoB0KZqKvkkEvzZuX0KnaM3qKWxBQkk07BdwtqA
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NjA0MjgsIm5iZiI6MTUxOTQ1NjgyOCwianRpIjoiVmxVWkFuZTVmd3BCNG1IdiJ9.--pZjV3hB1Fxh_xw-1mp1jkCcKrglGNdbHxtzkRsHJA
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NjM3MzYsIm5iZiI6MTUxOTQ2MDEzNiwianRpIjoiaXhZQm5wS0FZb3FWaEpmcCJ9.EUaTBufbFTpw_NDlb9fcvBfvMQADKBsUNweXJHq0xLI
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NjcwMzcsIm5iZiI6MTUxOTQ2MzQzNywianRpIjoidzBvckhzenp4cmJnVElGUiJ9.s2F3vTq0qWslFiq1pGVQ_a1S9IUoE9aWSBLvJUSLv3k
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NzAzMzUsIm5iZiI6MTUxOTQ2NjczNSwianRpIjoiZlBlVWRaVGtvZ0VIdkQyNSJ9.zcCxcwwWZ5Kne9AXTIpu65HgcXojB2GyovIzTe5qa4g
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NzM2NDIsIm5iZiI6MTUxOTQ3MDA0MiwianRpIjoiRUxiVkhnVmFqOW1VMEJDeiJ9.UYpKta2Q_RZQPDLg_K9jweGsU0VbwUj3hqj78NtnxvY
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0NzY5NDksIm5iZiI6MTUxOTQ3MzM0OSwianRpIjoiMjlJaDM1VFNvUlhQQ0pKbCJ9.H-mnuEGD8YaEOGvfqHIuTykyMf979AJVlS0O1T4lZPM
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0ODAyNTgsIm5iZiI6MTUxOTQ3NjY1OCwianRpIjoiT1Y1c3ViT0R5YXpadHkyTiJ9.lPLyLVpqYl16_6VLAnJ8agTjv_QMvfWYfS7uhfKbYsQ
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0ODM1NjUsIm5iZiI6MTUxOTQ3OTk2NSwianRpIjoiOEJXTDgxOWltUkJ3NmlReSJ9.3SqoGiqhijOQkx2y5YFR1jx_a-E7nUWi5oB3nLpbygQ
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0ODY4NzMsIm5iZiI6MTUxOTQ4MzI3MywianRpIjoidEc2cnhET2JibVB5VTVsciJ9.679Ht4BWG1J-uML0yzVB7usAx0VR5RuYyNRtut3RlM8
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0OTAxODEsIm5iZiI6MTUxOTQ4NjU4MSwianRpIjoiRzFKSE1UWUJicXBUMTNrRCJ9.voxTQ-fmi9K42-Qw00pe6LlwjARI5IMNyqUsuEhqDzk
+Feb 24 18:46:24 raspberrypi python3[19782]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0OTM1NDgsIm5iZiI6MTUxOTQ4OTk0OCwianRpIjoiTzlVbkRPYThnOGt4UDB2OSJ9.Vfg2-QNUH-3EF6yMzQJfXFSG--atgsIvOa6XF0ePXaw
+Feb 24 18:46:24 raspberrypi python3[19782]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0OTM1NDgsIm5iZiI6MTUxOTQ4OTk0OCwianRpIjoiTzlVbkRPYThnOGt4UDB2OSJ9.Vfg2-QNUH-3EF6yMzQJfXFSG--atgsIvOa6XF0ePXaw (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f26f50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:46:24 raspberrypi python3[19782]: Traceback (most recent call last):
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 141, in _new_conn
+Feb 24 18:46:24 raspberrypi python3[19782]:     (self.host, self.port), self.timeout, **extra_kw)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/util/connection.py", line 60, in create_connection
+Feb 24 18:46:24 raspberrypi python3[19782]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/lib/python3.5/socket.py", line 733, in getaddrinfo
+Feb 24 18:46:24 raspberrypi python3[19782]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Feb 24 18:46:24 raspberrypi python3[19782]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Feb 24 18:46:24 raspberrypi python3[19782]: During handling of the above exception, another exception occurred:
+Feb 24 18:46:24 raspberrypi python3[19782]: Traceback (most recent call last):
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 601, in urlopen
+Feb 24 18:46:24 raspberrypi python3[19782]:     chunked=chunked)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 357, in _make_request
+Feb 24 18:46:24 raspberrypi python3[19782]:     conn.request(method, url, **httplib_request_kw)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/lib/python3.5/http/client.py", line 1107, in request
+Feb 24 18:46:24 raspberrypi python3[19782]:     self._send_request(method, url, body, headers)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+Feb 24 18:46:24 raspberrypi python3[19782]:     self.endheaders(body)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+Feb 24 18:46:24 raspberrypi python3[19782]:     self._send_output(message_body)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+Feb 24 18:46:24 raspberrypi python3[19782]:     self.send(msg)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/lib/python3.5/http/client.py", line 877, in send
+Feb 24 18:46:24 raspberrypi python3[19782]:     self.connect()
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 166, in connect
+Feb 24 18:46:24 raspberrypi python3[19782]:     conn = self._new_conn()
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 150, in _new_conn
+Feb 24 18:46:24 raspberrypi python3[19782]:     self, "Failed to establish a new connection: %s" % e)
+Feb 24 18:46:24 raspberrypi python3[19782]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x75f26f50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+Feb 24 18:46:24 raspberrypi python3[19782]: During handling of the above exception, another exception occurred:
+Feb 24 18:46:24 raspberrypi python3[19782]: Traceback (most recent call last):
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 440, in send
+Feb 24 18:46:24 raspberrypi python3[19782]:     timeout=timeout
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 639, in urlopen
+Feb 24 18:46:24 raspberrypi python3[19782]:     _stacktrace=sys.exc_info()[2])
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/util/retry.py", line 388, in increment
+Feb 24 18:46:24 raspberrypi python3[19782]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+Feb 24 18:46:24 raspberrypi python3[19782]: urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0OTM1NDgsIm5iZiI6MTUxOTQ4OTk0OCwianRpIjoiTzlVbkRPYThnOGt4UDB2OSJ9.Vfg2-QNUH-3EF6yMzQJfXFSG--atgsIvOa6XF0ePXaw (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f26f50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:46:24 raspberrypi python3[19782]: During handling of the above exception, another exception occurred:
+Feb 24 18:46:24 raspberrypi python3[19782]: Traceback (most recent call last):
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 79, in <module>
+Feb 24 18:46:24 raspberrypi python3[19782]:     main()
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 62, in main
+Feb 24 18:46:24 raspberrypi python3[19782]:     client.post(READINGS_URL, payload)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/api/base.py", line 29, in post
+Feb 24 18:46:24 raspberrypi python3[19782]:     r = requests.post(endpoint_url, data=payload)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 112, in post
+Feb 24 18:46:24 raspberrypi python3[19782]:     return request('post', url, data=data, json=json, **kwargs)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 58, in request
+Feb 24 18:46:24 raspberrypi python3[19782]:     return session.request(method=method, url=url, **kwargs)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 508, in request
+Feb 24 18:46:24 raspberrypi python3[19782]:     resp = self.send(prep, **send_kwargs)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 618, in send
+Feb 24 18:46:24 raspberrypi python3[19782]:     r = adapter.send(request, **kwargs)
+Feb 24 18:46:24 raspberrypi python3[19782]:   File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 508, in send
+Feb 24 18:46:24 raspberrypi python3[19782]:     raise ConnectionError(e, request=request)
+Feb 24 18:46:24 raspberrypi python3[19782]: requests.exceptions.ConnectionError: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5MjkxMzQ4LCJleHAiOjE1MTk0OTM1NDgsIm5iZiI6MTUxOTQ4OTk0OCwianRpIjoiTzlVbkRPYThnOGt4UDB2OSJ9.Vfg2-QNUH-3EF6yMzQJfXFSG--atgsIvOa6XF0ePXaw (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f26f50>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:46:24 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:46:24 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:46:24 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:46:55 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:46:55 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:46:55 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:47:16 raspberrypi python3[2982]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f08c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:47:16 raspberrypi python3[2982]: Authenticaion Failed. Device not initilized
+Feb 24 18:47:16 raspberrypi python3[2982]: Traceback (most recent call last):
+Feb 24 18:47:16 raspberrypi python3[2982]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:47:16 raspberrypi python3[2982]:     print(client.jwt_token + "\n")
+Feb 24 18:47:16 raspberrypi python3[2982]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:47:16 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:47:16 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:47:16 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:47:47 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:47:47 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:47:47 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:48:08 raspberrypi python3[2990]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f21c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:48:08 raspberrypi python3[2990]: Authenticaion Failed. Device not initilized
+Feb 24 18:48:08 raspberrypi python3[2990]: Traceback (most recent call last):
+Feb 24 18:48:08 raspberrypi python3[2990]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:48:08 raspberrypi python3[2990]:     print(client.jwt_token + "\n")
+Feb 24 18:48:08 raspberrypi python3[2990]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:48:08 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:48:08 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:48:08 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:48:39 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:48:39 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:48:39 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:49:00 raspberrypi python3[2998]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ec7c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:49:00 raspberrypi python3[2998]: Authenticaion Failed. Device not initilized
+Feb 24 18:49:00 raspberrypi python3[2998]: Traceback (most recent call last):
+Feb 24 18:49:00 raspberrypi python3[2998]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:49:00 raspberrypi python3[2998]:     print(client.jwt_token + "\n")
+Feb 24 18:49:00 raspberrypi python3[2998]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:49:00 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:49:00 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:49:00 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:49:31 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:49:31 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:49:31 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:49:52 raspberrypi python3[3006]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75edfc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:49:52 raspberrypi python3[3006]: Authenticaion Failed. Device not initilized
+Feb 24 18:49:52 raspberrypi python3[3006]: Traceback (most recent call last):
+Feb 24 18:49:52 raspberrypi python3[3006]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:49:52 raspberrypi python3[3006]:     print(client.jwt_token + "\n")
+Feb 24 18:49:52 raspberrypi python3[3006]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:49:52 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:49:52 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:49:52 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:50:23 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:50:23 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:50:23 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:50:44 raspberrypi python3[3015]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e5cc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:50:44 raspberrypi python3[3015]: Authenticaion Failed. Device not initilized
+Feb 24 18:50:44 raspberrypi python3[3015]: Traceback (most recent call last):
+Feb 24 18:50:44 raspberrypi python3[3015]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:50:44 raspberrypi python3[3015]:     print(client.jwt_token + "\n")
+Feb 24 18:50:44 raspberrypi python3[3015]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:50:44 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:50:44 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:50:44 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:51:15 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:51:15 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:51:15 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:51:36 raspberrypi python3[3026]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ed8c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:51:36 raspberrypi python3[3026]: Authenticaion Failed. Device not initilized
+Feb 24 18:51:36 raspberrypi python3[3026]: Traceback (most recent call last):
+Feb 24 18:51:36 raspberrypi python3[3026]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:51:36 raspberrypi python3[3026]:     print(client.jwt_token + "\n")
+Feb 24 18:51:36 raspberrypi python3[3026]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:51:36 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:51:36 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:51:36 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:52:07 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:52:07 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:52:07 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:52:28 raspberrypi python3[3036]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f37c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:52:28 raspberrypi python3[3036]: Authenticaion Failed. Device not initilized
+Feb 24 18:52:28 raspberrypi python3[3036]: Traceback (most recent call last):
+Feb 24 18:52:28 raspberrypi python3[3036]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:52:28 raspberrypi python3[3036]:     print(client.jwt_token + "\n")
+Feb 24 18:52:28 raspberrypi python3[3036]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:52:28 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:52:28 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:52:28 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:52:59 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:52:59 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:52:59 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:53:20 raspberrypi python3[3041]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e71c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:53:20 raspberrypi python3[3041]: Authenticaion Failed. Device not initilized
+Feb 24 18:53:20 raspberrypi python3[3041]: Traceback (most recent call last):
+Feb 24 18:53:20 raspberrypi python3[3041]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:53:20 raspberrypi python3[3041]:     print(client.jwt_token + "\n")
+Feb 24 18:53:20 raspberrypi python3[3041]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:53:20 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:53:20 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:53:20 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:53:51 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:53:51 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:53:51 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:54:12 raspberrypi python3[3049]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f3ec70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:54:12 raspberrypi python3[3049]: Authenticaion Failed. Device not initilized
+Feb 24 18:54:12 raspberrypi python3[3049]: Traceback (most recent call last):
+Feb 24 18:54:12 raspberrypi python3[3049]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:54:12 raspberrypi python3[3049]:     print(client.jwt_token + "\n")
+Feb 24 18:54:12 raspberrypi python3[3049]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:54:12 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:54:12 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:54:12 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:54:43 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:54:43 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:54:43 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:55:04 raspberrypi python3[3057]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f21c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:55:04 raspberrypi python3[3057]: Authenticaion Failed. Device not initilized
+Feb 24 18:55:04 raspberrypi python3[3057]: Traceback (most recent call last):
+Feb 24 18:55:04 raspberrypi python3[3057]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:55:04 raspberrypi python3[3057]:     print(client.jwt_token + "\n")
+Feb 24 18:55:04 raspberrypi python3[3057]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:55:04 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:55:04 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:55:04 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:55:35 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:55:35 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:55:35 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:55:56 raspberrypi python3[3065]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f50c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:55:56 raspberrypi python3[3065]: Authenticaion Failed. Device not initilized
+Feb 24 18:55:56 raspberrypi python3[3065]: Traceback (most recent call last):
+Feb 24 18:55:56 raspberrypi python3[3065]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:55:56 raspberrypi python3[3065]:     print(client.jwt_token + "\n")
+Feb 24 18:55:56 raspberrypi python3[3065]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:55:56 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:55:56 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:55:56 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:56:27 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:56:27 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:56:27 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:56:48 raspberrypi python3[3074]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f05c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:56:48 raspberrypi python3[3074]: Authenticaion Failed. Device not initilized
+Feb 24 18:56:48 raspberrypi python3[3074]: Traceback (most recent call last):
+Feb 24 18:56:48 raspberrypi python3[3074]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:56:48 raspberrypi python3[3074]:     print(client.jwt_token + "\n")
+Feb 24 18:56:48 raspberrypi python3[3074]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:56:48 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:56:48 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:56:48 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:57:19 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:57:19 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:57:19 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:57:40 raspberrypi python3[3083]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e8bc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:57:40 raspberrypi python3[3083]: Authenticaion Failed. Device not initilized
+Feb 24 18:57:40 raspberrypi python3[3083]: Traceback (most recent call last):
+Feb 24 18:57:40 raspberrypi python3[3083]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:57:40 raspberrypi python3[3083]:     print(client.jwt_token + "\n")
+Feb 24 18:57:40 raspberrypi python3[3083]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:57:40 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:57:40 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:57:40 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:58:11 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:58:11 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:58:11 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:58:32 raspberrypi python3[3092]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75eccc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:58:32 raspberrypi python3[3092]: Authenticaion Failed. Device not initilized
+Feb 24 18:58:32 raspberrypi python3[3092]: Traceback (most recent call last):
+Feb 24 18:58:32 raspberrypi python3[3092]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:58:32 raspberrypi python3[3092]:     print(client.jwt_token + "\n")
+Feb 24 18:58:32 raspberrypi python3[3092]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:58:32 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:58:32 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:58:32 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:59:03 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:59:03 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:59:03 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 18:59:24 raspberrypi python3[3100]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f35c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 18:59:24 raspberrypi python3[3100]: Authenticaion Failed. Device not initilized
+Feb 24 18:59:24 raspberrypi python3[3100]: Traceback (most recent call last):
+Feb 24 18:59:24 raspberrypi python3[3100]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 18:59:24 raspberrypi python3[3100]:     print(client.jwt_token + "\n")
+Feb 24 18:59:24 raspberrypi python3[3100]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 18:59:24 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 18:59:24 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 18:59:24 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 18:59:55 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 18:59:55 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 18:59:55 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:00:16 raspberrypi python3[3108]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e8bc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:00:16 raspberrypi python3[3108]: Authenticaion Failed. Device not initilized
+Feb 24 19:00:16 raspberrypi python3[3108]: Traceback (most recent call last):
+Feb 24 19:00:16 raspberrypi python3[3108]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:00:16 raspberrypi python3[3108]:     print(client.jwt_token + "\n")
+Feb 24 19:00:16 raspberrypi python3[3108]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:00:16 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:00:16 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:00:16 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:00:47 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:00:47 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:00:47 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:01:08 raspberrypi python3[3119]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ea3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:01:08 raspberrypi python3[3119]: Authenticaion Failed. Device not initilized
+Feb 24 19:01:08 raspberrypi python3[3119]: Traceback (most recent call last):
+Feb 24 19:01:08 raspberrypi python3[3119]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:01:08 raspberrypi python3[3119]:     print(client.jwt_token + "\n")
+Feb 24 19:01:08 raspberrypi python3[3119]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:01:08 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:01:08 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:01:08 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:01:39 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:01:39 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:01:39 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:02:00 raspberrypi python3[3125]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f18c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:02:00 raspberrypi python3[3125]: Authenticaion Failed. Device not initilized
+Feb 24 19:02:00 raspberrypi python3[3125]: Traceback (most recent call last):
+Feb 24 19:02:00 raspberrypi python3[3125]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:02:00 raspberrypi python3[3125]:     print(client.jwt_token + "\n")
+Feb 24 19:02:00 raspberrypi python3[3125]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:02:00 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:02:00 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:02:00 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:02:31 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:02:31 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:02:31 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:02:52 raspberrypi python3[3133]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e8ac70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:02:52 raspberrypi python3[3133]: Authenticaion Failed. Device not initilized
+Feb 24 19:02:52 raspberrypi python3[3133]: Traceback (most recent call last):
+Feb 24 19:02:52 raspberrypi python3[3133]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:02:52 raspberrypi python3[3133]:     print(client.jwt_token + "\n")
+Feb 24 19:02:52 raspberrypi python3[3133]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:02:52 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:02:52 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:02:52 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:03:23 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:03:23 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:03:23 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:03:44 raspberrypi python3[3143]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f30c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:03:44 raspberrypi python3[3143]: Authenticaion Failed. Device not initilized
+Feb 24 19:03:44 raspberrypi python3[3143]: Traceback (most recent call last):
+Feb 24 19:03:44 raspberrypi python3[3143]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:03:44 raspberrypi python3[3143]:     print(client.jwt_token + "\n")
+Feb 24 19:03:44 raspberrypi python3[3143]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:03:44 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:03:44 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:03:44 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:04:15 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:04:15 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:04:15 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:04:36 raspberrypi python3[3152]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ee7c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:04:36 raspberrypi python3[3152]: Authenticaion Failed. Device not initilized
+Feb 24 19:04:36 raspberrypi python3[3152]: Traceback (most recent call last):
+Feb 24 19:04:36 raspberrypi python3[3152]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:04:36 raspberrypi python3[3152]:     print(client.jwt_token + "\n")
+Feb 24 19:04:36 raspberrypi python3[3152]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:04:36 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:04:36 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:04:36 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:05:07 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:05:07 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:05:07 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:05:28 raspberrypi python3[3160]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f1ac70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:05:28 raspberrypi python3[3160]: Authenticaion Failed. Device not initilized
+Feb 24 19:05:28 raspberrypi python3[3160]: Traceback (most recent call last):
+Feb 24 19:05:28 raspberrypi python3[3160]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:05:28 raspberrypi python3[3160]:     print(client.jwt_token + "\n")
+Feb 24 19:05:28 raspberrypi python3[3160]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:05:28 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:05:28 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:05:28 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:05:59 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:05:59 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:05:59 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:06:20 raspberrypi python3[3168]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ee3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:06:20 raspberrypi python3[3168]: Authenticaion Failed. Device not initilized
+Feb 24 19:06:20 raspberrypi python3[3168]: Traceback (most recent call last):
+Feb 24 19:06:20 raspberrypi python3[3168]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:06:20 raspberrypi python3[3168]:     print(client.jwt_token + "\n")
+Feb 24 19:06:20 raspberrypi python3[3168]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:06:20 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:06:20 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:06:20 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:06:51 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:06:51 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:06:51 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:07:12 raspberrypi python3[3177]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e8dc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:07:12 raspberrypi python3[3177]: Authenticaion Failed. Device not initilized
+Feb 24 19:07:12 raspberrypi python3[3177]: Traceback (most recent call last):
+Feb 24 19:07:12 raspberrypi python3[3177]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:07:12 raspberrypi python3[3177]:     print(client.jwt_token + "\n")
+Feb 24 19:07:12 raspberrypi python3[3177]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:07:12 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:07:12 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:07:12 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:07:43 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:07:43 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:07:43 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:08:04 raspberrypi python3[3185]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75eb9c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:08:04 raspberrypi python3[3185]: Authenticaion Failed. Device not initilized
+Feb 24 19:08:04 raspberrypi python3[3185]: Traceback (most recent call last):
+Feb 24 19:08:04 raspberrypi python3[3185]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:08:04 raspberrypi python3[3185]:     print(client.jwt_token + "\n")
+Feb 24 19:08:04 raspberrypi python3[3185]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:08:04 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:08:04 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:08:04 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:08:35 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:08:35 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:08:35 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:08:56 raspberrypi python3[3197]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75eb3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:08:56 raspberrypi python3[3197]: Authenticaion Failed. Device not initilized
+Feb 24 19:08:56 raspberrypi python3[3197]: Traceback (most recent call last):
+Feb 24 19:08:56 raspberrypi python3[3197]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:08:56 raspberrypi python3[3197]:     print(client.jwt_token + "\n")
+Feb 24 19:08:56 raspberrypi python3[3197]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:08:56 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:08:56 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:08:56 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:09:27 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:09:27 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:09:27 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:09:48 raspberrypi python3[3203]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f0dc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:09:48 raspberrypi python3[3203]: Authenticaion Failed. Device not initilized
+Feb 24 19:09:48 raspberrypi python3[3203]: Traceback (most recent call last):
+Feb 24 19:09:48 raspberrypi python3[3203]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:09:48 raspberrypi python3[3203]:     print(client.jwt_token + "\n")
+Feb 24 19:09:48 raspberrypi python3[3203]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:09:48 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:09:48 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:09:48 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:10:19 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:10:19 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:10:19 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:10:40 raspberrypi python3[3214]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f43c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:10:40 raspberrypi python3[3214]: Authenticaion Failed. Device not initilized
+Feb 24 19:10:40 raspberrypi python3[3214]: Traceback (most recent call last):
+Feb 24 19:10:40 raspberrypi python3[3214]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:10:40 raspberrypi python3[3214]:     print(client.jwt_token + "\n")
+Feb 24 19:10:40 raspberrypi python3[3214]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:10:40 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:10:40 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:10:40 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:11:11 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:11:11 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:11:11 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:11:32 raspberrypi python3[3220]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e7ec70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:11:32 raspberrypi python3[3220]: Authenticaion Failed. Device not initilized
+Feb 24 19:11:32 raspberrypi python3[3220]: Traceback (most recent call last):
+Feb 24 19:11:32 raspberrypi python3[3220]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:11:32 raspberrypi python3[3220]:     print(client.jwt_token + "\n")
+Feb 24 19:11:32 raspberrypi python3[3220]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:11:32 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:11:32 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:11:32 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:12:03 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:12:03 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:12:03 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:12:24 raspberrypi python3[3229]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f26c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:12:24 raspberrypi python3[3229]: Authenticaion Failed. Device not initilized
+Feb 24 19:12:24 raspberrypi python3[3229]: Traceback (most recent call last):
+Feb 24 19:12:24 raspberrypi python3[3229]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:12:24 raspberrypi python3[3229]:     print(client.jwt_token + "\n")
+Feb 24 19:12:24 raspberrypi python3[3229]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:12:24 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:12:24 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:12:24 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:12:55 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:12:55 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:12:55 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:13:16 raspberrypi python3[3238]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ee3c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:13:16 raspberrypi python3[3238]: Authenticaion Failed. Device not initilized
+Feb 24 19:13:16 raspberrypi python3[3238]: Traceback (most recent call last):
+Feb 24 19:13:16 raspberrypi python3[3238]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:13:16 raspberrypi python3[3238]:     print(client.jwt_token + "\n")
+Feb 24 19:13:16 raspberrypi python3[3238]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:13:16 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:13:16 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:13:16 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:13:47 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:13:47 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:13:47 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:14:08 raspberrypi python3[3246]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f3bc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:14:08 raspberrypi python3[3246]: Authenticaion Failed. Device not initilized
+Feb 24 19:14:08 raspberrypi python3[3246]: Traceback (most recent call last):
+Feb 24 19:14:08 raspberrypi python3[3246]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:14:08 raspberrypi python3[3246]:     print(client.jwt_token + "\n")
+Feb 24 19:14:08 raspberrypi python3[3246]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:14:08 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:14:08 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:14:08 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:14:39 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:14:39 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:14:39 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:15:00 raspberrypi python3[3255]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ee7c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:15:00 raspberrypi python3[3255]: Authenticaion Failed. Device not initilized
+Feb 24 19:15:00 raspberrypi python3[3255]: Traceback (most recent call last):
+Feb 24 19:15:00 raspberrypi python3[3255]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:15:00 raspberrypi python3[3255]:     print(client.jwt_token + "\n")
+Feb 24 19:15:00 raspberrypi python3[3255]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:15:00 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:15:00 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:15:00 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:15:31 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:15:31 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:15:31 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:15:52 raspberrypi python3[3263]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f03c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:15:52 raspberrypi python3[3263]: Authenticaion Failed. Device not initilized
+Feb 24 19:15:52 raspberrypi python3[3263]: Traceback (most recent call last):
+Feb 24 19:15:52 raspberrypi python3[3263]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:15:52 raspberrypi python3[3263]:     print(client.jwt_token + "\n")
+Feb 24 19:15:52 raspberrypi python3[3263]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:15:52 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:15:52 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:15:52 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:16:23 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:16:23 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:16:23 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:16:44 raspberrypi python3[3271]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ec2c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:16:44 raspberrypi python3[3271]: Authenticaion Failed. Device not initilized
+Feb 24 19:16:44 raspberrypi python3[3271]: Traceback (most recent call last):
+Feb 24 19:16:44 raspberrypi python3[3271]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:16:44 raspberrypi python3[3271]:     print(client.jwt_token + "\n")
+Feb 24 19:16:44 raspberrypi python3[3271]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:16:44 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:16:44 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:16:44 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:17:15 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:17:15 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:17:15 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:17:36 raspberrypi python3[3293]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f04c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:17:36 raspberrypi python3[3293]: Authenticaion Failed. Device not initilized
+Feb 24 19:17:36 raspberrypi python3[3293]: Traceback (most recent call last):
+Feb 24 19:17:36 raspberrypi python3[3293]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:17:36 raspberrypi python3[3293]:     print(client.jwt_token + "\n")
+Feb 24 19:17:36 raspberrypi python3[3293]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:17:36 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:17:36 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:17:36 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:18:07 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:18:07 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:18:07 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:18:28 raspberrypi python3[3302]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f3ac70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:18:28 raspberrypi python3[3302]: Authenticaion Failed. Device not initilized
+Feb 24 19:18:28 raspberrypi python3[3302]: Traceback (most recent call last):
+Feb 24 19:18:28 raspberrypi python3[3302]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:18:28 raspberrypi python3[3302]:     print(client.jwt_token + "\n")
+Feb 24 19:18:28 raspberrypi python3[3302]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:18:28 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:18:28 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:18:28 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:18:59 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:18:59 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:18:59 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:19:20 raspberrypi python3[3311]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75effc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:19:20 raspberrypi python3[3311]: Authenticaion Failed. Device not initilized
+Feb 24 19:19:20 raspberrypi python3[3311]: Traceback (most recent call last):
+Feb 24 19:19:20 raspberrypi python3[3311]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:19:20 raspberrypi python3[3311]:     print(client.jwt_token + "\n")
+Feb 24 19:19:20 raspberrypi python3[3311]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:19:20 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:19:20 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:19:20 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:19:51 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:19:51 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:19:51 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:20:12 raspberrypi python3[3320]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f1ec70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:20:12 raspberrypi python3[3320]: Authenticaion Failed. Device not initilized
+Feb 24 19:20:12 raspberrypi python3[3320]: Traceback (most recent call last):
+Feb 24 19:20:12 raspberrypi python3[3320]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:20:12 raspberrypi python3[3320]:     print(client.jwt_token + "\n")
+Feb 24 19:20:12 raspberrypi python3[3320]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:20:12 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:20:12 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:20:12 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:20:43 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:20:43 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:20:43 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:21:04 raspberrypi python3[3329]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75effc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:21:04 raspberrypi python3[3329]: Authenticaion Failed. Device not initilized
+Feb 24 19:21:04 raspberrypi python3[3329]: Traceback (most recent call last):
+Feb 24 19:21:04 raspberrypi python3[3329]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:21:04 raspberrypi python3[3329]:     print(client.jwt_token + "\n")
+Feb 24 19:21:04 raspberrypi python3[3329]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:21:04 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:21:04 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:21:04 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:21:35 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:21:35 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:21:35 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:21:56 raspberrypi python3[3340]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f3ec70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:21:56 raspberrypi python3[3340]: Authenticaion Failed. Device not initilized
+Feb 24 19:21:56 raspberrypi python3[3340]: Traceback (most recent call last):
+Feb 24 19:21:56 raspberrypi python3[3340]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:21:56 raspberrypi python3[3340]:     print(client.jwt_token + "\n")
+Feb 24 19:21:56 raspberrypi python3[3340]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:21:56 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:21:56 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:21:56 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:22:27 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:22:27 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:22:27 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:22:48 raspberrypi python3[3345]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f44c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:22:48 raspberrypi python3[3345]: Authenticaion Failed. Device not initilized
+Feb 24 19:22:48 raspberrypi python3[3345]: Traceback (most recent call last):
+Feb 24 19:22:48 raspberrypi python3[3345]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:22:48 raspberrypi python3[3345]:     print(client.jwt_token + "\n")
+Feb 24 19:22:48 raspberrypi python3[3345]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:22:48 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:22:48 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:22:48 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:23:19 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:23:19 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:23:19 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:23:40 raspberrypi python3[3354]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e8cc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:23:40 raspberrypi python3[3354]: Authenticaion Failed. Device not initilized
+Feb 24 19:23:40 raspberrypi python3[3354]: Traceback (most recent call last):
+Feb 24 19:23:40 raspberrypi python3[3354]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:23:40 raspberrypi python3[3354]:     print(client.jwt_token + "\n")
+Feb 24 19:23:40 raspberrypi python3[3354]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:23:40 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:23:40 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:23:40 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:24:11 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:24:11 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:24:11 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:24:32 raspberrypi python3[3363]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ea5c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:24:32 raspberrypi python3[3363]: Authenticaion Failed. Device not initilized
+Feb 24 19:24:32 raspberrypi python3[3363]: Traceback (most recent call last):
+Feb 24 19:24:32 raspberrypi python3[3363]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:24:32 raspberrypi python3[3363]:     print(client.jwt_token + "\n")
+Feb 24 19:24:32 raspberrypi python3[3363]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:24:32 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:24:32 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:24:32 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:25:03 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:25:03 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:25:03 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:25:19 raspberrypi python3[3371]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75f2fc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:25:19 raspberrypi python3[3371]: Authenticaion Failed. Device not initilized
+Feb 24 19:25:19 raspberrypi python3[3371]: Traceback (most recent call last):
+Feb 24 19:25:19 raspberrypi python3[3371]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:25:19 raspberrypi python3[3371]:     print(client.jwt_token + "\n")
+Feb 24 19:25:19 raspberrypi python3[3371]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:25:19 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:25:19 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:25:19 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:25:50 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:25:50 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:25:50 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 24 19:25:51 raspberrypi python3[3529]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e8cc70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 24 19:25:51 raspberrypi python3[3529]: Authenticaion Failed. Device not initilized
+Feb 24 19:25:51 raspberrypi python3[3529]: Traceback (most recent call last):
+Feb 24 19:25:51 raspberrypi python3[3529]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 24 19:25:51 raspberrypi python3[3529]:     print(client.jwt_token + "\n")
+Feb 24 19:25:51 raspberrypi python3[3529]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 24 19:25:51 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 24 19:25:51 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 24 19:25:51 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 24 19:26:22 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 24 19:26:22 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 24 19:26:22 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9hdXRoL2RldmljZS9sb2dpbiIsImlhdCI6MTUxOTQ5MzE4NCwiZXhwIjoxNTE5NDk2Nzg0LCJuYmYiOjE1MTk0OTMxODQsImp0aSI6ImJUd3NyeVYwbmxOcElNdUkifQ.drIvUYiBVJB3rLLJQLGJH0a_f-HGH_VDUtXaCMCgKa4
+Feb 25 09:03:12 raspberrypi python3[3653]: Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+Feb 25 09:03:12 raspberrypi python3[3653]: [GCC 6.3.0 20170124]
+Feb 25 09:03:12 raspberrypi python3[3653]: IoT Client for Python
+Feb 25 09:03:12 raspberrypi python3[3653]: Device: 78
+Feb 25 09:03:12 raspberrypi python3[3653]: Starting to send readings...
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MDAwOTIsIm5iZiI6MTUxOTQ5NjQ5MiwianRpIjoiTkJ5Q1hOOHpzSEE5NG1obCJ9.Y4LjZwvB8ZgCSaL7fA3PMLp4JsH-jBUWVa8XMLObQb0
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MDM0MDAsIm5iZiI6MTUxOTQ5OTgwMCwianRpIjoiSEVsYUI0WnZnYkc2SkpGWiJ9.QOe9qk-OItt1EfSEjlMCyiPkAsxLrW6m7QjjVw6C0lY
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MDY3MDEsIm5iZiI6MTUxOTUwMzEwMSwianRpIjoiY2h1ZThKcWR4SmVSOHBISiJ9.nnnufiEoMt4KKoLCkkZxCtbIT55BkP_8dDwajWPvZSQ
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MTAwMDcsIm5iZiI6MTUxOTUwNjQwNywianRpIjoiNVphaUVKSUp5ZFh3YUN6SiJ9.VLOFE74vRb5QI3ahaCd0zCnvcrjH2VbIOzx8fxyA0Ms
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MTMzMTQsIm5iZiI6MTUxOTUwOTcxNCwianRpIjoiTjE1bFd2c3hkN2F6dzAxUiJ9.Izk7ApILaFuiX9WcqU_ibK7_GgNKYQu7KDwCixlN7CY
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MTY2MTcsIm5iZiI6MTUxOTUxMzAxNywianRpIjoiQTVmVHFZc01FZnJTdmRlNCJ9.qEf2oft4qG8qR1c71gErv6R1nCSVpn6FceLAtfO04Kg
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MTk5MjAsIm5iZiI6MTUxOTUxNjMyMCwianRpIjoiZFJHMVB0emIzTm91eEJ1ciJ9.MFBpVeROaSUg2ocoahqk88vOzfBg_bMgqIwfQIafk50
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MjMyMzIsIm5iZiI6MTUxOTUxOTYzMiwianRpIjoiM0ZLYUd0NFd0MmoySWxVRSJ9.SLjiIo4cp08d6bVj-pmITjK6CRoKTD5LDBTUhYScbNk
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MjY1NDEsIm5iZiI6MTUxOTUyMjk0MSwianRpIjoiOXFMeDdjSDU1UkxhcnQ4QiJ9.xE3TkmylWUlp8l3ZnZXK4F5gaogc_O1M6HBd4LAQYLA
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1Mjk4NTMsIm5iZiI6MTUxOTUyNjI1MywianRpIjoialdEcmtGczJTWTdNZklPcSJ9.K1cwZho1JiqtbfxpUTxajzv8qr_8YKG4BcE4ciYTT_A
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MzMxNjMsIm5iZiI6MTUxOTUyOTU2MywianRpIjoieE00Sk5FaVNTblJ5bURsSiJ9.4o4_O44LyzjEB6GR4E8lY_Ps_dp2-VXgyOMSCNJOC28
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1MzY0NzIsIm5iZiI6MTUxOTUzMjg3MiwianRpIjoiZWpxaTFiY1RoWmo0M3g4WCJ9.uGBVk6gt0F68qyrBfhbr49ElbtakxRU_FVFpeQ4FKKo
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1Mzk3ODQsIm5iZiI6MTUxOTUzNjE4NCwianRpIjoiU09aS1BvV2FUeUt2dlVuNiJ9.91Scko2-lNduqMrObMwq99YFMoUCffVzHwLCNcPQ5zs
+Feb 25 09:03:12 raspberrypi python3[3653]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1NDMwOTAsIm5iZiI6MTUxOTUzOTQ5MCwianRpIjoiVldEaEdxYzVLeFhuVXp3cCJ9.yhkgU2xzb030d199jL78kkCYQB6sq5ZjbHUUrz1qE1g
+Feb 25 09:03:12 raspberrypi python3[3653]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1NDMwOTAsIm5iZiI6MTUxOTUzOTQ5MCwianRpIjoiVldEaEdxYzVLeFhuVXp3cCJ9.yhkgU2xzb030d199jL78kkCYQB6sq5ZjbHUUrz1qE1g (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e86410>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:03:12 raspberrypi python3[3653]: Traceback (most recent call last):
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 141, in _new_conn
+Feb 25 09:03:12 raspberrypi python3[3653]:     (self.host, self.port), self.timeout, **extra_kw)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/util/connection.py", line 60, in create_connection
+Feb 25 09:03:12 raspberrypi python3[3653]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/lib/python3.5/socket.py", line 733, in getaddrinfo
+Feb 25 09:03:12 raspberrypi python3[3653]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Feb 25 09:03:12 raspberrypi python3[3653]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Feb 25 09:03:12 raspberrypi python3[3653]: During handling of the above exception, another exception occurred:
+Feb 25 09:03:12 raspberrypi python3[3653]: Traceback (most recent call last):
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 601, in urlopen
+Feb 25 09:03:12 raspberrypi python3[3653]:     chunked=chunked)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 357, in _make_request
+Feb 25 09:03:12 raspberrypi python3[3653]:     conn.request(method, url, **httplib_request_kw)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/lib/python3.5/http/client.py", line 1107, in request
+Feb 25 09:03:12 raspberrypi python3[3653]:     self._send_request(method, url, body, headers)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+Feb 25 09:03:12 raspberrypi python3[3653]:     self.endheaders(body)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+Feb 25 09:03:12 raspberrypi python3[3653]:     self._send_output(message_body)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+Feb 25 09:03:12 raspberrypi python3[3653]:     self.send(msg)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/lib/python3.5/http/client.py", line 877, in send
+Feb 25 09:03:12 raspberrypi python3[3653]:     self.connect()
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 166, in connect
+Feb 25 09:03:12 raspberrypi python3[3653]:     conn = self._new_conn()
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 150, in _new_conn
+Feb 25 09:03:12 raspberrypi python3[3653]:     self, "Failed to establish a new connection: %s" % e)
+Feb 25 09:03:12 raspberrypi python3[3653]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x75e86410>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+Feb 25 09:03:12 raspberrypi python3[3653]: During handling of the above exception, another exception occurred:
+Feb 25 09:03:12 raspberrypi python3[3653]: Traceback (most recent call last):
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 440, in send
+Feb 25 09:03:12 raspberrypi python3[3653]:     timeout=timeout
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 639, in urlopen
+Feb 25 09:03:12 raspberrypi python3[3653]:     _stacktrace=sys.exc_info()[2])
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/util/retry.py", line 388, in increment
+Feb 25 09:03:12 raspberrypi python3[3653]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+Feb 25 09:03:12 raspberrypi python3[3653]: urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1NDMwOTAsIm5iZiI6MTUxOTUzOTQ5MCwianRpIjoiVldEaEdxYzVLeFhuVXp3cCJ9.yhkgU2xzb030d199jL78kkCYQB6sq5ZjbHUUrz1qE1g (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e86410>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:03:12 raspberrypi python3[3653]: During handling of the above exception, another exception occurred:
+Feb 25 09:03:12 raspberrypi python3[3653]: Traceback (most recent call last):
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 79, in <module>
+Feb 25 09:03:12 raspberrypi python3[3653]:     main()
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 62, in main
+Feb 25 09:03:12 raspberrypi python3[3653]:     client.post(READINGS_URL, payload)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/api/base.py", line 29, in post
+Feb 25 09:03:12 raspberrypi python3[3653]:     r = requests.post(endpoint_url, data=payload)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 112, in post
+Feb 25 09:03:12 raspberrypi python3[3653]:     return request('post', url, data=data, json=json, **kwargs)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 58, in request
+Feb 25 09:03:12 raspberrypi python3[3653]:     return session.request(method=method, url=url, **kwargs)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 508, in request
+Feb 25 09:03:12 raspberrypi python3[3653]:     resp = self.send(prep, **send_kwargs)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 618, in send
+Feb 25 09:03:12 raspberrypi python3[3653]:     r = adapter.send(request, **kwargs)
+Feb 25 09:03:12 raspberrypi python3[3653]:   File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 508, in send
+Feb 25 09:03:12 raspberrypi python3[3653]:     raise ConnectionError(e, request=request)
+Feb 25 09:03:12 raspberrypi python3[3653]: requests.exceptions.ConnectionError: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9yZWZyZXNoIiwiaWF0IjoxNTE5NDkzMTg0LCJleHAiOjE1MTk1NDMwOTAsIm5iZiI6MTUxOTUzOTQ5MCwianRpIjoiVldEaEdxYzVLeFhuVXp3cCJ9.yhkgU2xzb030d199jL78kkCYQB6sq5ZjbHUUrz1qE1g (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75e86410>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:03:12 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 25 09:03:12 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 25 09:03:12 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 25 09:03:42 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 25 09:03:42 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 25 09:03:42 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 25 09:03:44 raspberrypi python3[7675]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/auth/device/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ed9c70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:03:44 raspberrypi python3[7675]: Authenticaion Failed. Device not initilized
+Feb 25 09:03:44 raspberrypi python3[7675]: Traceback (most recent call last):
+Feb 25 09:03:44 raspberrypi python3[7675]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 74, in <module>
+Feb 25 09:03:44 raspberrypi python3[7675]:     print(client.jwt_token + "\n")
+Feb 25 09:03:44 raspberrypi python3[7675]: AttributeError: 'NoneType' object has no attribute 'jwt_token'
+Feb 25 09:03:44 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 25 09:03:44 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 25 09:03:44 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 25 09:04:14 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 25 09:04:14 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 25 09:04:14 raspberrypi systemd[1]: Started My Demo Python App Service.
+Feb 25 09:42:44 raspberrypi python3[7790]: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9hdXRoL2RldmljZS9sb2dpbiIsImlhdCI6MTUxOTU0MjI1NiwiZXhwIjoxNTE5NTQ1ODU2LCJuYmYiOjE1MTk1NDIyNTYsImp0aSI6InQzNWZiZUFvY21VdUlvNHgifQ.OR2Op0ymduQ5LVsfGp-rYdToZ3GqXG7DN123WXL6emc
+Feb 25 09:42:44 raspberrypi python3[7790]: Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+Feb 25 09:42:44 raspberrypi python3[7790]: [GCC 6.3.0 20170124]
+Feb 25 09:42:44 raspberrypi python3[7790]: IoT Client for Python
+Feb 25 09:42:44 raspberrypi python3[7790]: Device: 78
+Feb 25 09:42:44 raspberrypi python3[7790]: Starting to send readings...
+Feb 25 09:42:44 raspberrypi python3[7790]: Request failed: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9hdXRoL2RldmljZS9sb2dpbiIsImlhdCI6MTUxOTU0MjI1NiwiZXhwIjoxNTE5NTQ1ODU2LCJuYmYiOjE1MTk1NDIyNTYsImp0aSI6InQzNWZiZUFvY21VdUlvNHgifQ.OR2Op0ymduQ5LVsfGp-rYdToZ3GqXG7DN123WXL6emc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ef4f70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:42:44 raspberrypi python3[7790]: Traceback (most recent call last):
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 141, in _new_conn
+Feb 25 09:42:44 raspberrypi python3[7790]:     (self.host, self.port), self.timeout, **extra_kw)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/util/connection.py", line 60, in create_connection
+Feb 25 09:42:44 raspberrypi python3[7790]:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/lib/python3.5/socket.py", line 733, in getaddrinfo
+Feb 25 09:42:44 raspberrypi python3[7790]:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+Feb 25 09:42:44 raspberrypi python3[7790]: socket.gaierror: [Errno -3] Temporary failure in name resolution
+Feb 25 09:42:44 raspberrypi python3[7790]: During handling of the above exception, another exception occurred:
+Feb 25 09:42:44 raspberrypi python3[7790]: Traceback (most recent call last):
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 601, in urlopen
+Feb 25 09:42:44 raspberrypi python3[7790]:     chunked=chunked)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 357, in _make_request
+Feb 25 09:42:44 raspberrypi python3[7790]:     conn.request(method, url, **httplib_request_kw)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/lib/python3.5/http/client.py", line 1107, in request
+Feb 25 09:42:44 raspberrypi python3[7790]:     self._send_request(method, url, body, headers)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/lib/python3.5/http/client.py", line 1152, in _send_request
+Feb 25 09:42:44 raspberrypi python3[7790]:     self.endheaders(body)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/lib/python3.5/http/client.py", line 1103, in endheaders
+Feb 25 09:42:44 raspberrypi python3[7790]:     self._send_output(message_body)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+Feb 25 09:42:44 raspberrypi python3[7790]:     self.send(msg)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/lib/python3.5/http/client.py", line 877, in send
+Feb 25 09:42:44 raspberrypi python3[7790]:     self.connect()
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 166, in connect
+Feb 25 09:42:44 raspberrypi python3[7790]:     conn = self._new_conn()
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connection.py", line 150, in _new_conn
+Feb 25 09:42:44 raspberrypi python3[7790]:     self, "Failed to establish a new connection: %s" % e)
+Feb 25 09:42:44 raspberrypi python3[7790]: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x75ef4f70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+Feb 25 09:42:44 raspberrypi python3[7790]: During handling of the above exception, another exception occurred:
+Feb 25 09:42:44 raspberrypi python3[7790]: Traceback (most recent call last):
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 440, in send
+Feb 25 09:42:44 raspberrypi python3[7790]:     timeout=timeout
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/connectionpool.py", line 639, in urlopen
+Feb 25 09:42:44 raspberrypi python3[7790]:     _stacktrace=sys.exc_info()[2])
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/urllib3/util/retry.py", line 388, in increment
+Feb 25 09:42:44 raspberrypi python3[7790]:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+Feb 25 09:42:44 raspberrypi python3[7790]: urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9hdXRoL2RldmljZS9sb2dpbiIsImlhdCI6MTUxOTU0MjI1NiwiZXhwIjoxNTE5NTQ1ODU2LCJuYmYiOjE1MTk1NDIyNTYsImp0aSI6InQzNWZiZUFvY21VdUlvNHgifQ.OR2Op0ymduQ5LVsfGp-rYdToZ3GqXG7DN123WXL6emc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ef4f70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:42:44 raspberrypi python3[7790]: During handling of the above exception, another exception occurred:
+Feb 25 09:42:44 raspberrypi python3[7790]: Traceback (most recent call last):
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 79, in <module>
+Feb 25 09:42:44 raspberrypi python3[7790]:     main()
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/main.py", line 62, in main
+Feb 25 09:42:44 raspberrypi python3[7790]:     client.post(READINGS_URL, payload)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/api/base.py", line 29, in post
+Feb 25 09:42:44 raspberrypi python3[7790]:     r = requests.post(endpoint_url, data=payload)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 112, in post
+Feb 25 09:42:44 raspberrypi python3[7790]:     return request('post', url, data=data, json=json, **kwargs)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/requests/api.py", line 58, in request
+Feb 25 09:42:44 raspberrypi python3[7790]:     return session.request(method=method, url=url, **kwargs)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 508, in request
+Feb 25 09:42:44 raspberrypi python3[7790]:     resp = self.send(prep, **send_kwargs)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/requests/sessions.py", line 618, in send
+Feb 25 09:42:44 raspberrypi python3[7790]:     r = adapter.send(request, **kwargs)
+Feb 25 09:42:44 raspberrypi python3[7790]:   File "/usr/local/lib/python3.5/dist-packages/requests/adapters.py", line 508, in send
+Feb 25 09:42:44 raspberrypi python3[7790]:     raise ConnectionError(e, request=request)
+Feb 25 09:42:44 raspberrypi python3[7790]: requests.exceptions.ConnectionError: HTTPConnectionPool(host='sensor.makkaraperuna.com', port=80): Max retries exceeded with url: /api/device/78/readings?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjc4LCJpc3MiOiJodHRwOi8vc2Vuc29yLm1ha2thcmFwZXJ1bmEuY29tL2FwaS9hdXRoL2RldmljZS9sb2dpbiIsImlhdCI6MTUxOTU0MjI1NiwiZXhwIjoxNTE5NTQ1ODU2LCJuYmYiOjE1MTk1NDIyNTYsImp0aSI6InQzNWZiZUFvY21VdUlvNHgifQ.OR2Op0ymduQ5LVsfGp-rYdToZ3GqXG7DN123WXL6emc (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x75ef4f70>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+Feb 25 09:42:44 raspberrypi systemd[1]: demo_pythonApp.service: Main process exited, code=exited, status=1/FAILURE
+Feb 25 09:42:44 raspberrypi systemd[1]: demo_pythonApp.service: Unit entered failed state.
+Feb 25 09:42:44 raspberrypi systemd[1]: demo_pythonApp.service: Failed with result 'exit-code'.
+Feb 25 09:43:15 raspberrypi systemd[1]: demo_pythonApp.service: Service hold-off time over, scheduling restart.
+Feb 25 09:43:15 raspberrypi systemd[1]: Stopped My Demo Python App Service.
+Feb 25 09:43:15 raspberrypi systemd[1]: Started My Demo Python App Service.
